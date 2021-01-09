@@ -3,16 +3,14 @@ From node:lts-buster
 #ADD https://archive.fastgit.org/microsoft/vscode/archive/1.52.1.tar.gz /app
 ENV CODE_VERSION 1.52.1
 
-RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list \
-    && sed -i 's/security.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list \
-    && apt-get update \
+RUN apt-get update \
     && apt-get install -y build-essential \
 	g++ \
 	libx11-dev \
 	libxkbfile-dev \
 	libsecret-1-dev \
         apt-utils \
-    && wget https://archive.fastgit.org/microsoft/vscode/archive/$CODE_VERSION.tar.gz \
+    && wget https://github.com/microsoft/vscode/archive/$CODE_VERSION.tar.gz \
     && tar xzf $CODE_VERSION.tar.gz -C /opt/ \
     && rm $CODE_VERSION.tar.gz \
     #&& ls -al ~ \

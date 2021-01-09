@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual .build-deps-code \
 	libxkbfile-dev \
 	libsecret-dev \
 	python \
-    && wget https://archive.fastgit.org/microsoft/vscode/archive/$CODE_VERSION.tar.gz \
+    && wget https://github.com/microsoft/vscode/archive/$CODE_VERSION.tar.gz \
     && tar xzf $CODE_VERSION.tar.gz -C /opt/ \
     && rm $CODE_VERSION.tar.gz \
     && cd /opt/vscode-$CODE_VERSION \
