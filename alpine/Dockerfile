@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual .build-deps-code \
         libsecret-dev \
         python \
         git \
-    && cd /opt
+    && cd /opt \
     && git clone https://github.com/microsoft/vscode.git \
     && git checkout $CODE_VERSION \
     && cd vscode \

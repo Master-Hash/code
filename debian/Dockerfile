@@ -14,12 +14,12 @@ RUN apt-get update \
     #&& wget https://github.com/microsoft/vscode/archive/$CODE_VERSION.tar.gz \
     #&& tar xzf $CODE_VERSION.tar.gz -C /opt/ \
     #&& rm $CODE_VERSION.tar.gz \
-    && cd /opt
-    && git clone https://github.com/microsoft/vscode.git
-    && git checkout $CODE_VERSION
+    && cd /opt \
+    && git clone https://github.com/microsoft/vscode.git \
+    && git checkout $CODE_VERSION \
     #&& ls -al ~ \
     #&& sleep 5 \
-    && cd vscode
+    && cd vscode \
     #&& npm config set registry https://registry.npm.taobao.org
     #&& yarn config set registry https://registry.npm.taobao.org \
     && yarn
