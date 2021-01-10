@@ -15,7 +15,7 @@ RUN apk add --no-cache --virtual .build-deps-code \
     && cd vscode \
     && git checkout $CODE_VERSION \
     && yarn \
-    && apk del .build-deps
+    && apk del .build-deps-code
 
 EXPOSE 8080
 WORKDIR /opt/vscode
