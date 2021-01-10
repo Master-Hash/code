@@ -12,8 +12,8 @@ RUN apk add --no-cache --virtual .build-deps-code \
         git \
     && cd /opt \
     && git clone https://github.com/microsoft/vscode.git \
-    && git checkout $CODE_VERSION \
     && cd vscode \
+    && git checkout $CODE_VERSION \
     && yarn \
     && apk del .build-deps
 

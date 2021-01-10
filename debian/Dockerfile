@@ -16,10 +16,10 @@ RUN apt-get update \
     #&& rm $CODE_VERSION.tar.gz \
     && cd /opt \
     && git clone https://github.com/microsoft/vscode.git \
+    && cd vscode \
     && git checkout $CODE_VERSION \
     #&& ls -al ~ \
     #&& sleep 5 \
-    && cd vscode \
     #&& npm config set registry https://registry.npm.taobao.org
     #&& yarn config set registry https://registry.npm.taobao.org \
     && yarn
