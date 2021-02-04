@@ -10,6 +10,6 @@ FROM busybox:latest
 
 RUN mkdir -p /usr/local/bin
 
-COPY --from=0 {deno,denort} /usr/local/bin
+COPY --from=0 ["deno", "denort", "/usr/local/bin/"]
 
 CMD [ "deno" ]
