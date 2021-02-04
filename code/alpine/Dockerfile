@@ -1,22 +1,20 @@
-From node:lts-alpine
+FROM node:lts-alpine
 
 ENV CODE_VERSION 1.52.1
 
 RUN apk add --no-cache --virtual .build-deps-code \
-        g++ \
-        make \
+        build-base \
         libx11-dev \
         libxkbfile-dev \
         libsecret-dev \
         python \
         git \
     && cd /opt \
-    && git clone https://github.com/microsoft/vscode.git \
+    && git clone -b ${CODE_VERSION} --depth=1 https://github.com/microsoft/vscode.git \
     && cd vscode \
-    && git checkout $CODE_VERSION \
     && yarn \
     && apk del .build-deps-code
 
 EXPOSE 8080
 WORKDIR /opt/vscode
-CMD ["yarn", "--no-launch"]
+CMD ["yarn", "web", "--no-launch"]
