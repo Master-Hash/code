@@ -6,8 +6,10 @@ RUN cargo install deno \
  # 用于 debug
  && ls .
 
-FROM busybox:glibc
+FROM busybox:latest
 
-COPY --from=0 deno /usr/local/bin
+RUN mkdir -p /usr/local/bin
+
+COPY --from=0 {deno,denort} /usr/local/bin
 
 CMD [ "deno" ]
