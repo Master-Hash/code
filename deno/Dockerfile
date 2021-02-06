@@ -7,8 +7,8 @@ ENV RUSTFLAGS="-C target-feature=-crt-static"
 # 如果在本地构建，可以加入为本地优化的参数
 
 RUN cargo install -vv deno \
- # 懂得都懂
- && strip /usr/local/cargo/bin/{deno,denort} \
+ # 懂的都懂
+ && strip /usr/local/cargo/bin/deno && strip /usr/local/cargo/bin/denort \
  # 用于 debug
  && ls /usr/local/cargo/bin \
  && deno --version 
