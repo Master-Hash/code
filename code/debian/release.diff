@@ -1,5 +1,5 @@
 --- package.json	2021-02-05 15:21:59.324076500 +0800
-+++ package.json.bak	2021-02-05 15:34:06.757899600 +0800
++++ package.json	2021-02-05 15:34:06.757899600 +0800
 @@ -1,5 +1,5 @@
  {
 -  "name": "code-oss-dev",
@@ -7,3 +7,13 @@
    "version": "1.53.0",
    "distro": "cdd6e6dc2642505c6c9d9ca940672ff0171a34f9",
    "author": {
+--- product.json	2021-02-05 15:21:59.326086400 +0800
++++ product.json	2021-02-06 11:46:38.484102600 +0800
+@@ -1,4 +1,7 @@
+ {
++	"quality": "stable",
++	"commit": "@COMMIT@",
++	"date": "@DATE@",
+ 	"nameShort": "Code - OSS",
+ 	"nameLong": "Code - OSS",
+ 	"applicationName": "code-oss",

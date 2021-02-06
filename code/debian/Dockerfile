@@ -16,7 +16,7 @@ RUN apt-get update \
     && cd /opt \
     && git clone -b ${CODE_VERSION} --depth=1 https://github.com/microsoft/vscode.git \
     && cd vscode \
-    && patch package.json < ../release.diff \
+    && patch -p0 < ../release.diff \
     && yarn
 
 EXPOSE 8080
