@@ -31,7 +31,7 @@ FROM gentoo/stage3:amd64-nomultilib
 COPY --from=builder /portage/ /
 COPY make.conf /etc/portage/
 
-RUN emerge -vuDN @world && emerge --buildpkgonly gcc && ZSTD_CLEVEL=19 tar --zstd -cf binpkgs.tar.zst var/cache/binpkgs
+RUN emerge -v1 portage && emerge -vuDN @world && emerge --buildpkgonly gcc && ZSTD_CLEVEL=19 tar --zstd -cf binpkgs.tar.zst var/cache/binpkgs
 
 FROM busybox:latest
 
