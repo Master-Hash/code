@@ -11,7 +11,7 @@ RUN cargo install -vv deno \
  && strip /usr/local/cargo/bin/deno && strip /usr/local/cargo/bin/denort \
  # 用于 debug
  && ls /usr/local/cargo/bin \
- && deno --version 
+ && deno --version
 
 FROM debian:buster-slim
 
