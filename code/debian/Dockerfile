@@ -2,7 +2,7 @@ FROM node:lts
 
 COPY release.diff /opt/
 
-ENV CODE_VERSION 1.53.1
+ENV CODE_VERSION 1.53.2
 
 RUN apt-get update \
     && apt-get install -y build-essential \

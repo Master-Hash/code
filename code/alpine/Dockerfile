@@ -2,7 +2,7 @@ FROM node:lts-alpine
 
 COPY release.diff /opt/
 
-ENV CODE_VERSION 1.53.1
+ENV CODE_VERSION 1.53.2
 
 RUN apk add --no-cache --virtual .build-deps-code \
         build-base \
