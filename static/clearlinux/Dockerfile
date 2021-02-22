@@ -4,8 +4,6 @@ FROM node:lts as element-web
 # https://github.com/vector-im/element-web/tree/master
 ARG ELEMENT_VERSION=1.7.21
 
-# 还是得照着官方的 Dockerfile 来？
-
 # Support custom branches of the react-sdk and js-sdk. This also helps us build
 # images of element-web develop.
 ARG USE_CUSTOM_SDKS=false
@@ -26,7 +24,7 @@ WORKDIR /opt/element-web
 RUN yarn && yarn build
 # 毕竟这个阶段都完了，git 就不删了吧（不是
 
-FROM httpd:alpine
+FROM clearlinux/httpd:alpine
 
 # 静态站点：
 # element-web
