@@ -1,9 +1,5 @@
 FROM python:latest
 
-COPY postcard opt/postcard
-COPY GeoLite2-City.mmdb opt/postcard/
-COPY postcard.ini opt/postcard
-
 RUN sed -i 's/deb.debian.org/mirrors4.tuna.tsinghua.edu.cn/' /etc/apt/sources.list \
  && sed -i 's/security.debian.org/mirrors4.tuna.tsinghua.edu.cn/' /etc/apt/sources.list \
  && apt-get update \
@@ -17,11 +13,3 @@ RUN sed -i 's/deb.debian.org/mirrors4.tuna.tsinghua.edu.cn/' /etc/apt/sources.li
 
 ENV LC_ALL zh_CN.UTF-8
 ENV LANG zh_CN.UTF-8
-WORKDIR /opt/postcard
-
-ENV FLASK_APP app
-ENV FLASK_ENV production
-
-EXPOSE 5000
-
-CMD [ "uwsgi", "postcard.ini" ]
